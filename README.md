@@ -170,3 +170,45 @@ public class MessageResource {
 	
 }
 ```
+## Profile
+```java
+
+@Path("/profiles")
+@Produces(MediaType.APPLICATION_JSON) 
+@Consumes(MediaType.APPLICATION_JSON)
+public class ProfileResource {
+
+	private ProfileDao profileDao = new ProfileDao();
+	
+	
+	@GET
+	public List<Profile> getProfiles(){
+		return profileDao.getProfiles();
+	}
+	
+	@GET
+	@Path("/{idProfile}")
+	public Profile getProfile(@PathParam("idProfile") int idProfile ){
+		return profileDao.getProfile(idProfile);
+	}
+	
+	@POST
+	public Profile addProfile(Profile profile){
+		return profileDao.adiciona(profile);
+	}
+	
+	@PUT
+	@Path("/{idProfile}")
+	public Profile updateProfile(@PathParam("idProfile") int idProfile, Profile profile){
+		profile.setId(idProfile);
+		return profileDao.altera(profile);
+	}
+	
+	@DELETE
+	@Path("/{idProfile}")
+	public void deleteProfile(@PathParam("idProfile") int idProfile){
+		profileDao.remove(idProfile);		
+	}
+}
+```
+
