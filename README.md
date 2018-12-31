@@ -1,6 +1,11 @@
 # Messager
-Messager app
-Messager app that support functions like social networks (profile management, messages, comments, and others).
+Simple messager app that support some back-end functions like social networks.
+<ul>
+	<li>Profile management</li>
+	<li>Messages</li>
+	<li>Comments</li>
+	<li>Others</li>
+</ul>
 
 
 ## Package Structure
